@@ -7,24 +7,25 @@
 
 ## Prérequis techniques
 
-PHP 8.4+
-avec l'extension pdo_msql
-Composer installé
-Un compte
-Scalingo
+-PHP 8.4+ avec l'extension pdo_msql
+-Composer installé
+-Un compte Scalingo
 
 ## Fichier de configuration CI
 
+-Versioning sur GitHub : Création d'un dépôt public sur le compte GitHub et poussez le code local.
+
+-Configuration d'un fichier ci.yml et placement dans le dossier .gitHub/workflows
+Commit & Push de ce fichier sur GitHub.
 Le fichier de configuration de l'intégration continue se trouve dans : .github/workflows/ci.yaml
 
 ## Procédure de déploiement pas à pas
 
 A. Initialisation sur Scalingo
-1.Création de l'application
+1.Création de l'application projetcloud (Create an application)
 
-B. Ajoute des variables d'environnement sur Scalingo APP_ENV et APP_SECRET
-Commit des changement
-git commit -m "Déploiement"
+B. Ajout des variables d'environnement sur Scalingo APP_ENV=prod et APP_SECRET récupéré en copiant la valeur "php -r "echo bin2hex(random_bytes(16));" sur le terminal vscode
 
-C. Mise en ligne
-1.Push des commits :git push
+Puis Commit des changement : git commit -m "Déploiement"
+
+C. Mise en ligne : Push des commits avec git push
